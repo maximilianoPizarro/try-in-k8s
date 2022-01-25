@@ -13,4 +13,3 @@ services:
     working_dir: /home
     environment:
       - KUBECONFIG=$HOME/.kube
-    command: kubeadm init --apiserver-advertise-address $(hostname -i)
