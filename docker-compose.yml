@@ -1,0 +1,16 @@
+# Try-in-K8S
+
+version: '3.7'
+services:
+
+#k8s
+
+  k8s-api:
+    image: franela/k8s:latest
+    ports:
+      - 8080:8080
+      - 6443:6443
+    working_dir: /home
+    environment:
+      - KUBECONFIG=$HOME/.kube
+    command: kubeadm init --apiserver-advertise-address $(hostname -i)
